@@ -1,65 +1,99 @@
+import { useRef, useEffect } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Nav from '../components/common/nav'
+import Footer from '../components/common/footer'
+import { TweenMax } from 'gsap'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+	let column = useRef();
+	let logo = useRef();
+	let icon = useRef();
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+	useEffect(()=>{
+		
+		TweenMax.set(logo.current, { y: -150, opacity: 0 });
+		TweenMax.to(logo.current, 1.5, { y: 0, opacity: 1, ease: "expo" });
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+		TweenMax.set(column.current, { y: -150, opacity: 0 });
+		TweenMax.to(column.current, 1, { y: 0, opacity: 1, ease: "expo", delay: 0.15 });
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+		TweenMax.set(icon.current, { opacity: 0 });
+		TweenMax.to(icon.current, 1, { opacity: 0.15, ease: "expo", delay: 0.5 });
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+	}, []);
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+	return (
+		<>
+			<div>
+				<Head></Head>
+				<Nav/>
+				<div className="heading">
+					<div className="heading-image">
+						<img src="/paiz-riera.svg" alt="" className="" ref={logo}/>
+					</div>
+					<div className="heading-column">
+						{/* <div>
+							<ul>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div> */}
+					</div>
+					<div className="heading-column background-orange" style={{ width: "70.5%" }} ref={column}>
+						<img src="/paiz-riera-logo.svg" alt="" className="heading-background-image" ref={icon}/>
+					</div>
+					<div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+					</div>
+				</div>
+			</div>
+			<section>
+				<div className="container">
+					<div className="row">
+						<div className="col-6"></div>
+						<div className="col-6">
+							<h2><u>Paiz Riera</u> Grupo Familiar</h2>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur accusantium voluptatibus quia minus laudantium voluptas quo animi magnam, at corporis ea inventore nesciunt vero fugit a voluptatum qui exercitationem neque dolorem! Nulla ex incidunt earum rerum aliquid, laboriosam blanditiis iure recusandae minima magnam architecto atque, nihil, necessitatibus mollitia tempore saepe cupiditate. Impedit ad eveniet voluptate quas doloribus, iusto dignissimos pariatur assumenda, asperiores dolor aliquam est vel! Autem iste maiores vitae commodi delectus soluta quis reiciendis sequi eaque consequuntur. Magni, dolores! Repellendus expedita rem ad velit asperiores sed et tempora quam debitis at ab, consequuntur similique doloribus modi. Eligendi, repellendus suscipit?</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div className="container">
+					<div className="row">
+						<div className="col-6">
+							<h2>Orígenes</h2>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur accusantium voluptatibus quia minus laudantium voluptas quo animi magnam, at corporis ea inventore nesciunt vero fugit a voluptatum qui exercitationem neque dolorem! Nulla ex incidunt earum rerum aliquid, laboriosam blanditiis iure recusandae minima magnam architecto atque, nihil, necessitatibus mollitia tempore saepe cupiditate. Impedit ad eveniet voluptate quas doloribus, iusto dignissimos pariatur assumenda, asperiores dolor aliquam est vel! Autem iste maiores vitae commodi delectus soluta quis reiciendis sequi eaque consequuntur. Magni, dolores! Repellendus expedita rem ad velit asperiores sed et tempora quam debitis at ab, consequuntur similique doloribus modi. Eligendi, repellendus suscipit?</p>
+						</div>
+						<div className="col-6"></div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div className="container">
+					<div className="row">
+						<div className="col-6"></div>
+						<div className="col-6">
+							<h2>Historia</h2>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur accusantium voluptatibus quia minus laudantium voluptas quo animi magnam, at corporis ea inventore nesciunt vero fugit a voluptatum qui exercitationem neque dolorem! Nulla ex incidunt earum rerum aliquid, laboriosam blanditiis iure recusandae minima magnam architecto atque, nihil, necessitatibus mollitia tempore saepe cupiditate. Impedit ad eveniet voluptate quas doloribus, iusto dignissimos pariatur assumenda, asperiores dolor aliquam est vel! Autem iste maiores vitae commodi delectus soluta quis reiciendis sequi eaque consequuntur. Magni, dolores! Repellendus expedita rem ad velit asperiores sed et tempora quam debitis at ab, consequuntur similique doloribus modi. Eligendi, repellendus suscipit?</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div className="container">
+					<div className="row">
+						<div className="col-6">
+							<h2>Fundación</h2>
+							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur accusantium voluptatibus quia minus laudantium voluptas quo animi magnam, at corporis ea inventore nesciunt vero fugit a voluptatum qui exercitationem neque dolorem! Nulla ex incidunt earum rerum aliquid, laboriosam blanditiis iure recusandae minima magnam architecto atque, nihil, necessitatibus mollitia tempore saepe cupiditate. Impedit ad eveniet voluptate quas doloribus, iusto dignissimos pariatur assumenda, asperiores dolor aliquam est vel! Autem iste maiores vitae commodi delectus soluta quis reiciendis sequi eaque consequuntur. Magni, dolores! Repellendus expedita rem ad velit asperiores sed et tempora quam debitis at ab, consequuntur similique doloribus modi. Eligendi, repellendus suscipit?</p>
+						</div>
+						<div className="col-6"></div>
+					</div>
+				</div>
+			</section>
+			<Footer/>
+		</>
+	)
 }

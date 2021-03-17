@@ -1,0 +1,32 @@
+$colors: (
+	orange: #f3a01e,
+	blue: #051d36,
+	yellow: #fcd04d,
+	grey: #f1eade
+);
+
+$font-size-base: 16px;
+$size-base: 5px;
+
+$z-index-superior: 999;
+$z-index-1: 990;
+$z-index-2: 980;
+$z-index-3: 970;
+$z-index-4: 960;
+$z-index-5: 950;
+
+@each $color, $value in $colors {
+	.background-#{$color}{
+		background-color: $value;
+	}
+	.text-#{$color} {
+		color: $value;
+	}
+}
+
+body {
+	background-color: map-get($colors, grey);
+	font-size: $font-size-base;
+	font-family: "apercu-light";
+}
+

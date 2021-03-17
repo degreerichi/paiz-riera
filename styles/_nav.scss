@@ -1,0 +1,56 @@
+nav {
+    &.dark {
+        a {
+            color: white;
+            &.active {
+                &:before {
+                    background-color: white;
+                }
+            }
+        }
+    }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    padding: $size-base * 7 $size-base * 7 $size-base * 7 $size-base * 10;
+    z-index: $z-index-3;
+    a {
+        padding-right: $size-base * 12;
+        color: black;
+        font-family: "montserrat-normal";
+        &.active {
+            font-family: "montserrat-bold";
+            position: relative;
+            &:before {
+                position: absolute;
+                content: " ";
+                top: -5px;
+                left: -20px;
+                width: 7px;
+                height: 30px;
+                background-color: map-get($colors, yellow);
+            }
+        }
+        &:hover {
+            text-decoration: none;
+            color: map-get($colors, orange);
+        }
+    }
+}
+
+.mouse-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: $z-index-2;
+    transition: all 0.5s ease;
+    svg {
+        width: 20px;
+    }
+    &:hover {
+        opacity: 0.3;
+    }
+}
