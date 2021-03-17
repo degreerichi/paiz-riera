@@ -6,3 +6,9 @@
 @import "nav";
 @import "heading";
 @import "footer";
+
+.no-before {
+    &:before {
+        content: none !important;
+    }
+}
