@@ -29,6 +29,13 @@ export default function Home() {
 		{ url: '/galerias/bienestar/slide4.jpg' }
 	];
 
+	let administrarGaleriaImages = [
+		{ url: '/galerias/administrar/slide1.jpg' },
+		{ url: '/galerias/administrar/slide2.jpg' },
+		{ url: '/galerias/administrar/slide3.jpg' },
+		{ url: '/galerias/administrar/slide4.jpg' }
+	];
+
 	useEffect(()=>{
 
 		new WOW.WOW({
@@ -135,10 +142,13 @@ export default function Home() {
 							<p className="wow fadeIn" data-wow-delay=".9s">Preferimos mantener la relación familiar en <strong>armonía</strong> <br/> antes que beneficiarnos económicamente en algo que <br/>dañe la relación familiar.</p>
 						</div>
 					</div>
-					<div className="riera-column">
-						<div className="imageslider justify-content-end wow fadeIn">
+					<div className="riera-column overflow-hidden">
+						<video width="800" height="400" autoPlay muted loop className="wow fadeIn" style={{ width: '300%' }} data-wow-delay=".3s">
+							<source src="/video/compressed.mp4" type="video/mp4"/>
+						</video>
+						{/* <div className="imageslider justify-content-end wow fadeIn">
 							<SimpleImageSlider images={bienestarGaleriaImages} width={600} height={400} style={{backgroundPosition: "center"}}/>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>
@@ -146,7 +156,7 @@ export default function Home() {
 				<div className="riera-row">
 					<div className="riera-column align-items-start">
 						<div className="imageslider wow fadeIn">
-							<SimpleImageSlider images={bienestarGaleriaImages} width={600} height={400} style={{backgroundPosition: "center"}}/>
+							<SimpleImageSlider images={administrarGaleriaImages} width={600} height={400} style={{backgroundPosition: "center"}}/>
 						</div>
 					</div>
 					<div className="riera-column align-items-start">
