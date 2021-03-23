@@ -36,10 +36,13 @@ const Nav = ({style})=> {
 						<a className={`${router.pathname === "/delta" ? "active" : ""}`}>Grupo Delta</a>
 					</Link>
 					<Link href="/holdings">
-						<a className={`${router.pathname === "/holdings" ? "active" : ""}`}>CD Holdings</a>
+						<a className={`${router.pathname === "/holdings" ? "active" : ""}`}>GD Holdings</a>
 					</Link>
 				</div>
 			</nav>
+			<div className="hamburguer">
+				<img src="/menu-hamburguer.svg" alt=""/>
+			</div>
 		</>
 	);
 }

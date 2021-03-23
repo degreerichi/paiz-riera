@@ -30,21 +30,12 @@ export default function Holdings (){
 				<div className="heading-image">
 					<img src="/gd-holdings.png" alt="" ref={logo}/>
 				</div>
-				<div className="heading-column">
-					{/* <div>
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div> */}
-				</div>
-				<div className="heading-column background-orange" style={{ width: "75%" }}  ref={column}>
+				<div className="heading-column background-orange"  ref={column}>
+					<video autoPlay muted loop className="section-background-video" style={{ width: '100%' }}>
+						<source src="/video/holdings-fondo.mp4" type="video/mp4"/>
+					</video>
 					<img src="/gd-holdings-logo.svg" alt="" className="heading-background-image" ref={icon}/>
 					{/* <img src="" alt="" className="heading-background-image"/> */}
-				</div>
-				<div>
-
 				</div>
 			</div>
 		</div>

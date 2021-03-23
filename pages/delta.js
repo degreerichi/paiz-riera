@@ -30,7 +30,10 @@ export default function Delta (){
                 <div className="heading-image">
 				    <img src="/grupo-delta.png" alt="" className="" ref={logo}/>
                 </div>
-				<div className="heading-column background-blue" style={{ width: "65.5%" }} ref={column}>
+				<div className="heading-column background-blue" ref={column}>
+					<video autoPlay muted loop className="section-background-video" style={{ width: '100%' }}>
+						<source src="/video/delta-fondo.mp4" type="video/mp4"/>
+					</video>
 					<img src="/grupo-delta-logo.svg" alt="" className="heading-background-image" ref={icon}/>
 					{/* <div>
 						<ul>
@@ -39,12 +42,6 @@ export default function Delta (){
 							<li></li>
 						</ul>
 					</div> */}
-				</div>
-				<div className="heading-column">
-					{/* <img src="" alt="" className="heading-background-image"/> */}
-				</div>
-				<div>
-
 				</div>
 			</div>
 		</div>
