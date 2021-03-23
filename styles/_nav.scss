@@ -60,8 +60,59 @@ nav {
     top: 20px;
     right: 0;
     padding: $size-base * 7 $size-base * 7 $size-base * 7 $size-base * 10;
-    z-index: $z-index-3;
-    img {
+    z-index: $z-index-superior;
+    &.opened {
+        rect {
+            fill: white;
+        }
+    }
+    svg {
         width: 50px;
     } 
+}
+
+.sidenav {
+    transition: all 0.5s ease-in-out;
+    z-index: $z-index-1;
+    background: map-get($colors, blue) url('/menu.jpg') center;
+    background-blend-mode: multiply;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    padding: $size-base * 10 $size-base * 10 $size-base * 10 $size-base * 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    &.opened {
+        right: 0;
+        opacity: 1;
+    }
+    .sidenav-link {
+        font-family: "montserrat-normal";
+        color: white;
+        text-decoration: none;
+        font-size: $font-size-base * 1.5;
+        line-height: $font-size-base * 3.5;
+        &:hover {
+            color: map-get($colors, yellow);
+            font-weight: bold;
+        }
+        &.active {
+
+        }
+    }
+    &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 250px;
+        background-color: map-get($colors, yellow);
+    }
 }

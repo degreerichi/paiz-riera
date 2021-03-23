@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
@@ -7,6 +7,7 @@ const Nav = ({style})=> {
 
 	let router = useRouter();
 	let mouseWheel = useRef();
+	const [opened, setOpened] = useState(false);
 
 	useEffect(()=>{
 
@@ -40,8 +41,44 @@ const Nav = ({style})=> {
 					</Link>
 				</div>
 			</nav>
-			<div className="hamburguer">
-				<img src="/menu-hamburguer.svg" alt=""/>
+			<a href="#!" onClick={()=>{setOpened(!opened)}}>
+				<div className={`hamburguer ${opened ? "opened" : ""}`}>
+					<svg viewBox="0 0 200 108">
+						<rect width="200" height="6"/>
+						<rect y="51" width="200" height="6"/>
+						<rect y="102" width="200" height="6"/>
+					</svg>
+				</div>
+			</a>
+			<div className={`sidenav ${opened ? "opened" : ""}`}>
+				<h1 className="no-before text-white mb-5">Menu</h1>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/" ? "active" : ""}`}>Orígenes</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}>Historia</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}>Valores y Principios</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}><b>FundaPar</b> - Fundación Paiz Riera</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}><b>Grupo Delta</b> - Oficina Familiar</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}>Inversiones Operativas y Financieras</a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}><b>GD Holdings</b></a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}><b>Clayton Investment Holdings</b></a>
+				</Link>
+				<Link href="#!">
+					<a className={`sidenav-link ${router.pathname === "/a" ? "active" : ""}`}>Contacto</a>
+				</Link>
 			</div>
 		</>
 	);
